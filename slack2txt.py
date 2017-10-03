@@ -10,9 +10,7 @@ import re
 argvs = sys.argv
 
 # フォルダの名前を持ってくる（力技）
-title = argvs[1][-len(argvs[1]):-4]
-start=title.rfind('/')
-title = argvs[1][start+1-len(argvs[1]):-4]
+title = argvs[1].split('/')[len(argvs[1].split('/'))-2]
 
 # フォルダ内のjsonを読み込んでtextだけ抽出してtxtに保存
 files = glob.glob(argvs[1])
